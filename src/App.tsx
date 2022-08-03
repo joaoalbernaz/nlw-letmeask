@@ -1,5 +1,6 @@
 import { Home } from "./pages/Home";
 import { NewRoom } from "./pages/NewRoom";
+import { Toaster } from 'react-hot-toast';
 
 import { 
   BrowserRouter, 
@@ -12,6 +13,8 @@ import { Room } from "./pages/Room";
 
 function App() {
   return (
+    <>
+    <Toaster/>
     <BrowserRouter>
       <AuthContextProvider>
         <Routes>
@@ -21,6 +24,7 @@ function App() {
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>
+    </>
   );
 }
 
