@@ -1,3 +1,5 @@
+@import '../../styles/color';
+
 #page-auth {
   display: flex;
   align-items: stretch;
@@ -6,7 +8,7 @@
   aside {
     flex: 7;
 
-    background: #835afd;
+    background: $app-purple;
     color: #FFF;
 
     display: flex;
@@ -84,7 +86,7 @@
 
     p {
       font-size: 14px;
-      color: #737380;
+      color: $app-medium-gray;
       margin: 16px;
 
       a {

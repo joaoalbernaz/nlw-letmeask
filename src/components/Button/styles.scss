@@ -1,8 +1,10 @@
+@import '../../styles/color';
+
 .button {
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: #835afd;
+  background: $app-purple;
   color: #fff;
   padding: 0 32px;
 
@@ -30,7 +32,12 @@
 
   &.outlined {
     background: #fff;
-    border: 1px solid #835afd;
-    color: #835afd;
+    border: 1px solid $app-purple;
+    color: $app-purple;
+  }
+
+  &.outlined.dark {
+    background: $app-dark-gray;
+    color: $app-white;
   }
 }

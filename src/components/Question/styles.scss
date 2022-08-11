@@ -1,3 +1,5 @@
+@import '../../styles/color';
+
 .question {
   background: #fefefe;
   border-radius: 8px;
@@ -10,10 +12,10 @@
 
   &.highlighted {
     background: #f4f0ff;
-    border: 1px solid #835afd;
+    border: 1px solid $app-purple;
 
     footer .user-info span {
-      color: #29292e;
+      color: $app-dark-gray;
     }
   }
 
@@ -22,7 +24,7 @@
   }
 
   p {
-    color: #29292e;
+    color: $app-dark-gray;
   }
 
   footer {
@@ -43,7 +45,7 @@
       
       span {
         margin-left: 8px;
-        color: #737380;
+        color: $app-medium-gray;
         font-size: 14px;
         font-weight: 500;
       }
@@ -63,17 +65,16 @@
       &.like-button {
         display: flex;
         align-items: flex-end;
-        color: #737380;
+        color: $app-medium-gray;
         gap: 8px;
 
         &.liked {
-          color: #835afd;
+          color: $app-purple;
           
           svg path {
-            stroke: #835afd;
+            stroke: $app-purple;
           }
         }
-
       }
 
       &:hover {
@@ -81,4 +82,28 @@
       }
     }
   }
+}
+
+.question.dark {
+  background: #27272e;
+}
+
+.question.highlighted.dark {
+  background: $app-dark-gray;
+}
+
+.question.asnwered.dark {
+
+}
+
+.question.dark p {
+  color: $app-light-gray;
+}
+
+.question.dark footer .user-info span {
+  color: $app-light-gray;
+}
+
+.question.dark footer button.like-button {
+  color: $app-light-gray;
 }

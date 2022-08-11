@@ -1,0 +1,95 @@
+@import '../../styles/color.scss';
+
+header {
+  padding: 24px;
+  border-bottom: 1px solid #e2e2e2;
+
+  .content {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > img {
+      max-height: 45px;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      button {
+        height: 40px;
+      }
+    }
+  }
+}
+
+.theme-toggle {
+  width: 60px;
+}
+
+.react.toggle.theme-toggle .react-toggle-track {
+  background-color: $app-dark-purple;
+}
+
+.react-toggle--checked.theme-toggle .react-toggle-track {
+  background-color: $app-purple;
+}
+
+.theme-toggle.react-toggle--checked .react-toggle-track:hover {
+  background-color: $app-dark-purple;
+}
+
+.theme-toggle.react-toggle--unchecked .react-toggle-track {
+  background-color: $app-dark-gray;
+}
+
+.theme-toggle.react-toggle--unchecked .react-toggle-track:hover {
+  background-color: $app-medium-gray;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: $app-purple;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: $app-dark-purple !important;
+}
+
+
+.theme-toggle.react-toggle--checked .react-toggle-track .react-toggle-track-check {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.react-toggle.theme-toggle .react-toggle-track .react-toggle-track-x {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  right: 13px;
+}
+
+.react-toggle.theme-toggle .react-toggle-thumb {
+  border: none;
+}
+
+.react-toggle--checked.theme-toggle .react-toggle-thumb, .react-toggle--uncheked.theme-toggle .react-toggle-thumb {
+  border: none;
+}
+
+.react-toggle.react-toggle--focus .react-toggle-thumb {
+  box-shadow: none;
+}
+
+.logo-img {
+  cursor: pointer;
+}
