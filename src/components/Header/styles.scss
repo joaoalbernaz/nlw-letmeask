@@ -27,6 +27,10 @@ header {
   }
 }
 
+header.dark {
+  border-bottom: 1px solid $app-dark-gray;
+}
+
 .theme-toggle {
   width: 60px;
 }
@@ -88,8 +92,4 @@ header {
 
 .react-toggle.react-toggle--focus .react-toggle-thumb {
   box-shadow: none;
-}
-
-.logo-img {
-  cursor: pointer;
 }

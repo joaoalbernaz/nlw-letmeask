@@ -4,8 +4,6 @@
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: $app-purple;
-  color: #fff;
   padding: 0 32px;
 
   display: flex;
@@ -28,6 +26,16 @@
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  &.light {
+    background: $app-purple;
+    color: $app-white;
+  }
+
+  &.dark {
+    color: $app-white;
+    background: $app-dark-purple;
   }
 
   &.outlined {

@@ -1,5 +1,4 @@
 import { RoomCode } from "../RoomCode";
-import logoImg from "../../assets/images/logo.svg";
 import Button from "../Button";
 import { ref, update } from "firebase/database";
 import { database } from "../../services/firebase";
@@ -9,6 +8,7 @@ import { useTheme } from "../../hooks/useTheme";
 import Toggle from "react-toggle";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import "react-toggle/style.css";
+import { Logo } from "../Logo/Logo";
 
 type HeaderProps = {
   canEndRoom?: boolean;
@@ -29,9 +29,9 @@ export function Header({ canEndRoom = false, roomId }: HeaderProps) {
   }
 
   return (
-    <header>
+    <header className={theme}>
         <div className="content">
-          <img className="logo-img" src={logoImg} alt="Letmeask" onClick={() => navigate('/')}/>
+          <Logo theme={theme}/>
           <Toggle
             className="theme-toggle"
             defaultChecked={theme === 'light'}

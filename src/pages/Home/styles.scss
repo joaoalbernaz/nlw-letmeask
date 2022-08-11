@@ -20,6 +20,10 @@
     img {
       max-width: 320px;
     }
+
+    &.dark {
+      background-color: $app-dark-purple;
+    }
   
     strong {
       font: 700 36px 'Poppins', sans-serif;
@@ -57,7 +61,7 @@
     text-align: center;
 
     > img {
-    align-self: center;
+      align-self: center;
     }
 
     h2 {
@@ -73,6 +77,14 @@
         padding: 0 16px;  
         background: #FFF;
         border: 1px solid #a8a8b3;
+      }
+
+      input.dark {
+        background: $app-dark-gray;
+      }
+
+      input.dark::placeholder {
+        color: $app-white;
       }
 
       button {
@@ -142,6 +154,10 @@
       height: 1px;
       background-color: #a8a8b3;
       margin-left: 16px;
+    }
+
+    &.dark {
+      color: $app-white;
     }
   }
 }
