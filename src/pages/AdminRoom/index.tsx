@@ -11,6 +11,7 @@ import { database } from '../../services/firebase';
 import { ref, remove, update } from 'firebase/database';
 import { Header } from '../../components/Header';
 import { useTheme } from '../../hooks/useTheme';
+import { getStyledSweetAlertModal } from '../../util/sweet-alert-modal';
 
 type RoomParams = {
   id: string;
@@ -22,10 +23,30 @@ export function AdminRoom() {
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
   const { theme } = useTheme();
+  const sweetAlert = getStyledSweetAlertModal(theme === 'dark');
 
   async function handleDeleteQuestion(questionId: string) {
-    if (window.confirm('Tem certeza que voce deseja excluir essa pergunta?')) {
+    const result = await sweetAlert.fire({
+      title: 'Deletar Pergunta?',
+      text: 'Tem certeza que deseja excluir essa pergunta?',
+      showCancelButton: true,      
+      icon: 'warning',
+      confirmButtonText: 'Sim, quero excluir',
+      cancelButtonText: 'Não, cancelar'
+    });
+    if (result.isConfirmed) {
       await remove(ref(database, `rooms/${roomId}/questions/${questionId}`));
+      sweetAlert.fire(
+        'Excluído!',
+        'Pergunta excluída com sucesso!',
+        'success'
+      )
+    } else {
+      sweetAlert.fire(
+        'Cancelado',
+        'Pergunta Mantida',
+        'error'
+      )
     }
   }
 
@@ -77,7 +98,7 @@ export function AdminRoom() {
                     <img src={answerImg} alt="Dar destaque a pergunta" />
                   </button>
                 </>
-             }
+              }
               <button onClick={() => handleDeleteQuestion(question.id)}>
                 <img src={deleteImg} alt="Remover Pergunta" />
               </button>
